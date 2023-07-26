@@ -1,0 +1,21 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/offer_add_or_modify_post">
+  <table class="table table-bordered">
+  <tr>
+    <td colspan="2"><table width="200" border="2">
+      <tr>
+        <td width="58" height="27">offer</td>
+        <td colspan="2"><input type="text" name="textfield" id="textfield" required/></td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td width="60"><input type="submit" name="button" id="button2" value="add" class="btn btn-success"/></td>
+             </tr>
+    </table></td>
+  </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

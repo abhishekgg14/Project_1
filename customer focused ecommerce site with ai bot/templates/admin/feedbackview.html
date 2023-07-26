@@ -1,0 +1,36 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td>sno</td>
+      <td>username</td>
+      <td>email</td>
+      <td>date</td>
+      <td>feedback</td>
+        <td>response</td>
+
+    </tr>
+    {% for i in feedback %}
+    <tr>
+
+
+      <td>{{ loop.index }}</td>
+      <td>{{ i['username'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td>{{ i['date'] }}</td>
+      <td>{{ i['feedback'] }}</td>
+             {% if i['status']=='pending' %}
+             <td><a href="/admin_respond_to_feedback/{{ i['fid'] }}">respond</a></td>
+             {% else %}
+             <td>{{ i['respond'] }}</td>
+             {% endif %}
+
+
+    </tr>
+        {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

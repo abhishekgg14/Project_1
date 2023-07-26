@@ -1,0 +1,77 @@
+{% extends 'user/sub_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+<table class="container-fluid">
+    <tr>
+        <td>Product</td>
+        <td><input type="text" name="search" class="form-control"/></td><td><input type="submit" name="s1" value="Search" class="btn btn-outline-success"></td>
+    </tr>
+</table>
+<div class="container">
+<div class="row">
+          {% for i in data %}
+              <div class="col-sm-4">
+              <div class="card">
+  <table>
+
+
+    <tr>
+      <td align="center" colspan="2"><img class="card-img-top" src="{{ i['productimage'] }}" alt="Card image cap"></td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>{{ i['productname'] }}</td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>{{ i['price'] }}</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>{{ i['productdescription'] }}</td>
+    </tr>
+    <tr>
+      <td>brand</td>
+      <td>{{ i['brandname'] }}</td>
+    </tr>
+    <tr>
+      <td>category</td>
+      <td>{{ i['catname'] }}</td>
+    </tr>
+{#    <tr>#}
+{#      <td>offer</td>#}
+{#      <td></td>#}
+{#    </tr>#}
+    <tr>
+      <td>color</td>
+      <td>{{ i['productcolor'] }}</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>{{ i['productsize'] }}</td>
+    </tr>
+{#    <tr>#}
+{#        <td >rating</td> <td align="right">&nbsp;</td>#}
+{#    </tr>#}
+
+    <tr>
+      <td ><a href="/user_addto_product_cart/{{ i["productid"] }}" class="btn btn-outline-primary">Add to cart</a></td>
+      <td align="right"><a href="/user_addto_product_wishlist/{{ i["productid"] }}" class="btn btn-outline-primary">Add to wishlist </a></td>
+    </tr>
+          <tr>
+      <td><a href="/user_product_rate/{{ i["productid"] }}" class="btn btn-outline-info">Send Rating </a></td>
+{#      <td align="right"><a href="/user_product_rate/{{ i["productid"] }}">Send Rating </a></td>#}
+    </tr>
+     <tr>
+     <td><br><br></td>
+     </tr>
+
+  </table>
+              </div>
+              </div>
+     {% endfor %}
+</div>
+</div>
+</form>
+</body>
+{% endblock %}

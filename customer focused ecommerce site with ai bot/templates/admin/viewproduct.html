@@ -1,0 +1,42 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/view_product_post">
+  <table class="table table-bordered">
+    <tr>
+        <td><input type="text" name="textfield" id="textfield" /></td>
+      <td><input type="submit" name="button" id="button" value="product search" /></td>
+    </tr>
+  </table>
+      <table class="table table-bordered">
+    <tr>
+      <td>Sno</td>
+      <td>productname</td>
+      <td>category</td>
+      <td>brand</td>
+      <td>price</td>
+      <td>description</td>
+      <td>color</td>
+      <td>size</td>
+      <td>image</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+          {% for i in data %}
+    <tr>
+      <td>{{  loop.index  }}&nbsp;</td>
+      <td>{{ i["productname"] }}&nbsp;</td>
+      <td>{{ i["catname"] }}&nbsp;</td>
+      <td>{{ i["brandname"] }}</td>
+      <td>{{ i["price"]  }}</td>
+      <td>{{ i["productdescription"] }}&nbsp;</td>
+      <td>{{ i["productcolor"] }}&nbsp;</td>
+      <td>{{ i["productsize"] }}&nbsp;</td>
+      <td><img src="{{ i['productimage'] }}" width="90" height="90">&nbsp;</td>
+       <td><a href="/admin_edit_product/{{ i['productid'] }}" class="btn btn-primary" class="btn btn-primary">edit</a><br><a href="/admin_delete_product/{{ i['productid'] }}" class="btn btn-danger">delete</a></td>
+        <td><a href="/admin_offer_add_or_modify/{{ i['productid'] }}" class="btn btn-outline-success">offeradd</a><br><a href="/admin_offer_view/{{ i['productid'] }}" class="btn btn-outline-info">offerview</a></td>
+        <td><a href="/admin_product_rate_and_review/{{ i['productid'] }}" class="btn btn-outline-info">Review</a></td>
+    </tr>
+          {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

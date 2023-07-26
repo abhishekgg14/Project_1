@@ -1,0 +1,71 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1"  name="form1" enctype="multipart/form-data" method="post" action="/edit_product_post">
+<input type="hidden" name="id" value="{{ data['productid'] }}"/>
+  <table class="table table-bordered">
+    <tr><td colspan="2">
+<center><img src="{{ data['productimage'] }}"></center>
+    </td></tr><tr>
+      <td>product name</td>
+      <td><input type="text" name="textfield2" id="textfield2"  value="{{ data['productname'] }}" /></td>
+    </tr>
+    <tr>
+      <td>product price</td>
+      <td><input type="text" name="textfield3" id="textfield3" value="{{ data['price'] }}" /></td>
+    </tr>
+    <tr>
+      <td>product description</td>
+      <td><input type="text" name="textfield4" id="textfield4" value="{{ data['productdescription'] }}"/></td>
+    </tr>
+    <tr>
+      <td>product category</td>
+      <td><select name="select" id="select">
+        
+          {% for i in da %}
+          
+        <option value="{{ i['caid'] }}">{{ i['catname'] }}</option>
+        
+          {% endfor %}
+      
+      </select></td>
+    </tr>
+    <tr>
+      <td>brand</td>
+      <td><select name="select2" id="select2">
+        
+          {% for i in dat %}
+          
+        <option value="{{ i['brandid'] }}">{{ i['brandname'] }}</option>
+        
+          {% endfor %}
+      
+      </select></td>
+    </tr>
+    <tr>
+      <td>product image</td>
+      <td><input type="file" name="fileField" id="fileField" /></td>
+    </tr>
+    <tr>
+      <td>product size</td>
+      <td><select name="select3" id="select3">
+          <option>6</option>
+          <option>7</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>product color</td>
+      <td><select name="select4" id="select4">
+          <option>red</option>
+          <option>green</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="edit" class="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

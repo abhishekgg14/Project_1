@@ -1,0 +1,30 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/product_list_sales_igure_post">
+  <table width="600" border="2">
+    <tr>
+      <td>date from</td>
+      <td><input type="text" name="textfield" id="textfield" /></td>
+      <td>date to</td>
+      <td><input type="text" name="textfield2" id="textfield2" /></td>
+      <td><input type="submit" name="button" id="button" value="Show" /></td>
+    </tr>
+    <tr>
+      <td>Sno</td>
+      <td>product name</td>
+      <td>product id</td>
+      <td>product image</td>
+      <td>quantity</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img name="" src="" width="105" height="116" alt="" /></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

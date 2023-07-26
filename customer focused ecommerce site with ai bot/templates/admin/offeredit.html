@@ -1,0 +1,22 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/admin_offer_edit_post">
+  <table class="table table-bordered">
+    <tr>
+      <td>offer<input type="hidden" name="textfield2"  value="{{ data['offerid'] }}"/></td>
+      <td><label>
+        <input type="text" name="textfield" value="{{ data['offeramount'] }}" />
+
+      </label></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><label>
+        <input type="submit" name="Submit" value="edit"class="btn btn-success" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

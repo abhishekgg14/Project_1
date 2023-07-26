@@ -1,0 +1,24 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td width="21">sno</td>
+      <td width="74">category</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>{{ i["catname"] }}&nbsp;</td>
+      <td width="59"><a href="/admin_edit_category/{{ i['caid'] }}"class="btn btn-primary">edit</a></td>
+      <td width="100"><a href="/admin_delete_category/{{ i['caid'] }}" class="btn btn-danger">delete</a></td>
+
+    </tr>
+      {%  endfor  %}
+  </table>
+</form>
+</body>
+{% endblock %}

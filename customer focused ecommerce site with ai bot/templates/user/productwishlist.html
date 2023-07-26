@@ -1,0 +1,75 @@
+{% extends 'user/sub_temp.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table class="container-fluid">
+{#    <tr>#}
+{#        <td>Product</td>#}
+{#        <td><input type="text" name="search"/><td><input type="submit" name="s1" value="Search"></td></td>#}
+{#    </tr>#}
+</table>
+  <div class="container">
+<div class="row">
+          {% for i in data %}
+              <div class="col-sm-4">
+              <div class="card">
+              <table>
+
+    <tr>
+      <td colspan="3"><img name="" src="{{ i['productimage'] }}" width="262" height="121" alt="" /></td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>{{ i['productname'] }}</td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>{{ i['price'] }}</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>{{ i['productdescription'] }}</td>
+    </tr>
+    <tr>
+      <td>brand</td>
+      <td>{{ i['brandname'] }}</td>
+    </tr>
+    <tr>
+      <td>category</td>
+      <td>{{ i['catname'] }}</td>
+    </tr>
+{#    <tr>#}
+{#      <td>offer</td>#}
+{#      <td></td>#}
+{#    </tr>#}
+    <tr>
+      <td>color</td>
+      <td>{{ i['productcolor'] }}</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>{{ i['productsize'] }}</td>
+    </tr>
+{#    <tr>#}
+{#        <td >rating</td> <td align="right">&nbsp;</td>#}
+{#    </tr>#}
+
+    <tr>
+      <td ><a href="/user_addto_product_cart/{{ i["productid"] }}" class="btn btn-outline-info">Add to cart</a></td>
+      <td ><a href="/user_product_wishlistremove/{{ i["wlid"] }}" class="btn btn-outline-danger">Remove</a></td>
+
+    </tr>
+     <tr>
+     <td><br><br></td>
+     </tr>
+               </table>
+              </div>
+              </div>
+        {% endfor %}
+</div>
+  </div>
+
+
+</form>
+{% endblock %}

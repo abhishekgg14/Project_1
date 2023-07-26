@@ -1,0 +1,28 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="/offer_view_post">
+  <table class="table table-bordered">
+
+    <tr>
+
+      <td width="79">productname</td>
+      <td width="32">offer info</td>
+      <td width="82">productimage</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+ {% for i in i %}
+    <tr>
+
+      <td>&nbsp;{{ i['productname'] }}</td>
+      <td>&nbsp;{{ i['offeramount'] }}</td>
+      <td><img name="" src="{{ i['productimage'] }}" width="81" height="59" alt="" /></td>
+{#      <td width="45"><label><a href="/admin_offer_edit/{{ i['offerid'] }}">edit</a></label></td>#}
+      <td width="64"><label><a href="/admin_offer_delete/{{ i['offerid'] }}">delete</a></label></td>
+        </tr>
+      {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}

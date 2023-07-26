@@ -1,0 +1,54 @@
+{% extends 'user/sub_temp.html' %}
+{% block body %}
+<body>
+<form action="/user_send_rtings" method="post">
+  <table class="table table-hover">
+
+    <tr>
+      <td>Rate <input type="hidden" name="pid" value="{{ pid }}" id="textfield3" /></td>
+      <td><select name="rate">
+          <option>5.0</option>
+           <option>4.5</option>
+          <option>4.0</option>
+          <option>3.0</option>
+          <option>3.5</option>
+          <option>2.0</option>
+          <option>2.5</option>
+          <option>1.0</option>
+          <option>1.5</option>
+          <option>0.5</option>
+          <option>0.0</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Review</td>
+      <td><textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="add" class="btn btn-success"/></td>
+    </tr>
+  </table>
+<table class="table table-hover">
+<tr>
+    <td>#</td>
+   <td>User</td>
+    <td>Feedback</td>
+    <td>Rating</td>
+    <td>Date</td>
+</tr>
+
+    {% for i in data %}
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td><img src="{{ i["image"] }}" height="100px" width="100px">{{ i["username"] }}</td>
+        <td>{{ i["preview"] }}</td>
+        <td>{{ i["prate"] }}</td>
+        <td>{{ i["date"] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

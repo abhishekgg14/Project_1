@@ -1,0 +1,29 @@
+{% extends 'user/sub_temp.html' %}
+{% block body %}
+<form method="post" action="/user_buy_product">
+     <table width="200" border="2">
+    <tr>
+      <td>Total</td>
+      <td>{{ tot }}  : offer included<input type="hidden" name="total" value="{{ tot }}" id="textfield" /></td>
+    </tr> <tr>
+      <td>Bank</td>
+      <td><select name="bank">
+          <option>SBI</option>
+          <option>UNION</option>
+          <option>CANARA</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Pin Number</td>
+      <td><input type="password" name="textfield2" id="textfield2" /></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="add" /></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+{% endblock %}

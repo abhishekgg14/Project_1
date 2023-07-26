@@ -1,0 +1,22 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/respond_to_feedback_post">
+  <table class="table table-bordered">
+    <tr>
+      <td>feedback<input type="hidden" name="fd_id" value="{{ data['fid'] }}"></td>
+      <td>&nbsp;{{ data["feedback"] }}</td>
+    </tr>
+    <tr>
+      <td>respond</td>
+        <td><textarea name="textfield" id="textfield" ></textarea></td>
+    </tr>
+    <tr>
+
+      <td><input type="submit" name="button" id="button" value="submit" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

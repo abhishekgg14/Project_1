@@ -1,0 +1,27 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/view_brand_post">
+  <table class="table table-bordered">
+    <tr>
+      <td height="58" colspan="4">brand name
+      <input type="text" name="textfield" id="textfield" />        <input type="submit" name="button" id="button" value="search" /></td>
+    </tr>
+    <tr>
+      <td width="50">sno</td>
+      <td width="161">brand name</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>{{ i["brandname"] }}</td>
+      <td width="126"><a href="/admin_edit_brand/{{ i['brandid'] }}" class="btn btn-primary">editbrand</a></td>
+      <td width="160"><p><a href="/admin_delete_brand/{{ i['brandid'] }}"class="btn btn-danger">delete</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

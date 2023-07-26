@@ -1,0 +1,44 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/purchase_history_order_main_post">
+  <table class="table table-bordered">
+    <tr>
+      <td>from date</td>
+      <td><input type="date" name="textfield" id="textfield" /></td>
+      <td>to date</td>
+      <td><input type="date" name="textfield2" id="textfield2" /></td>
+      <td><input type="submit" name="button" id="button" value="Show"  class="btn btn-success"/></td>
+    </tr>
+  </table>
+    <p></p>
+    <table border="1">
+    <tr>
+      <td>Sno</td>
+      <td>Orderno</td>
+          <td>date</td>
+      <td>User Info</td>
+
+
+      <td>total</td>
+      <td>&nbsp;</td>
+    </tr>
+        {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['omid'] }}</td>
+           <td>{{ i['date'] }}&nbsp;</td>
+
+      <td>{{ i['username'] }}
+          <br>{{ i['email'] }}
+          <br>{{ i['phone'] }}&nbsp;</td>
+
+      <td>{{ i['totalamount'] }}&nbsp;</td>
+      <td><a href="/admin_producr_history_order_sud/{{ i["omid"] }}" class="btn btn-outline-info">more</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

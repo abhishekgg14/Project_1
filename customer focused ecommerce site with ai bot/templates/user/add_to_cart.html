@@ -1,0 +1,104 @@
+{#{% extends 'user/sub_temp.html' %}#}
+{#{% block body %}#}
+
+<html lang="en">
+
+
+<!-- molla/index-1.html  22 Nov 2019 09:55:06 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Molla - Bootstrap eCommerce Template</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/User_temp/assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/User_temp/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/User_temp/assets/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/User_temp/assets/images/icons/site.html">
+    <link rel="mask-icon" href="/static/User_temp/assets/images/icons/safari-pinned-tab.svg" color="#666666">
+    <link rel="shortcut icon" href="/static/User_temp/assets/images/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="/static/User_temp/assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/static/User_temp/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="/static/User_temp/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/User_temp/assets/css/plugins/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/static/User_temp/assets/css/plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="/static/User_temp/assets/css/plugins/jquery.countdown.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="/static/User_temp/assets/css/style.css">
+    <link rel="stylesheet" href="/static/User_temp/assets/css/skins/skin-demo-2.css">
+    <link rel="stylesheet" href="/static/User_temp/assets/css/demos/demo-2.css">
+</head>
+{#<form action="/user_addtocart" method="post">#}
+{#<div align="center">#}
+{#    <div class="card-body">#}
+{#     <table>#}
+{##}
+{#    <tr>#}
+{#      <td>Quatity</td>#}
+{#      <td><input type="number" name="textfield2" id="textfield2" />#}
+{#             </tr>#}
+{##}
+{#    <tr>#}
+{#      <td>&nbsp;</td>#}
+{#      <td><input type="submit" name="button" id="button" value="add" /></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#    </div>#}
+{#</div>#}
+
+  <div class="container newsletter-popup-container mfp-hide" id="newsletter-popup-form">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="row no-gutters bg-white newsletter-popup-content">
+                    <div class="col-xl-3-5col col-lg-7 banner-content-wrap">
+                        <div class="banner-content text-center">
+                            <img src="/static/User_temp/assets/images/popup/newsletter/logo.png" class="logo" alt="logo" width="60" height="15">
+{#                            <h2 class="banner-title">get <span>25<light>%</light></span> off</h2>#}
+{#                            <p>Subscribe to the Molla eCommerce newsletter to receive timely updates from your favorite products.</p>#}
+                            <form action="/user_addtocart" method="post">
+                                <div class="input-group input-group-round">
+                                     <input type="hidden" name="pid" value="{{ pid }}" id="textfield2" />
+
+                                    <input type="number" class="form-control form-control-white" placeholder="Your Quantity"name="textfield2" aria-label="Email Adress" required>
+                                    <div class="input-group-append">
+                                        <button class="btn" type="submit"><span>go</span></button>
+                                    </div><!-- .End .input-group-append -->
+                                </div><!-- .End .input-group -->
+                            </form>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="register-policy-2" required>
+{#                                <label class="custom-control-label" for="register-policy-2">Do not show this popup again</label>#}
+                            </div><!-- End .custom-checkbox -->
+                        </div>
+                    </div>
+                    <div class="col-xl-2-5col col-lg-5 ">
+                        <img src="/static/User_temp/assets/images/popup/newsletter/img-1.jpg" class="newsletter-img" alt="newsletter">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+ <script src="/static/User_temp/assets/js/jquery.min.js"></script>
+    <script src="/static/User_temp/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/User_temp/assets/js/jquery.hoverIntent.min.js"></script>
+    <script src="/static/User_temp/assets/js/jquery.waypoints.min.js"></script>
+    <script src="/static/User_temp/assets/js/superfish.min.js"></script>
+    <script src="/static/User_temp/assets/js/owl.carousel.min.js"></script>
+    <script src="/static/User_temp/assets/js/jquery.plugin.min.js"></script>
+    <script src="/static/User_temp/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/User_temp/assets/js/jquery.countdown.min.js"></script>
+    <!-- Main JS File -->
+    <script src="/static/User_temp/assets/js/main.js"></script>
+    <script src="/static/User_temp/assets/js/demos/demo-2.js"></script>
+</body>
+</html>
+{#{% endblock %}#}

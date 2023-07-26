@@ -1,0 +1,32 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td>Sno</td>
+      <td>customer name</td>
+      <td>customer phone</td>
+      <td>gender</td>
+      <td>address</td>
+      <td>email</td>
+
+    </tr>
+ {% for i in user %}
+    <tr>
+    <td>{{ loop.index }}</td>
+      <td><img src="{{ i["image"] }}" height="100px" width="100px"><br>{{ i['username'] }}</td>
+      <td>{{ i["phone"] }}&nbsp;</td>
+      <td>{{ i["gender"] }}&nbsp;</td>
+      <td>{{ i["place"] }}<br>{{ i["post"] }}<br>{{ i["pin"] }}<br>{{ i["district"] }}<br>{{ i["state"] }}</td>
+      <td>{{ i["email"] }}&nbsp;</td>
+
+
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

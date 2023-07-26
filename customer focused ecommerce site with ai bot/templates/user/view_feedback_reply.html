@@ -1,0 +1,23 @@
+{% extends 'user/sub_temp.html' %}
+{% block body %}
+<body>
+<table>
+<tr>
+    <td>#</td>
+   <td>Date</td>
+    <td>Feedback</td>
+    <td>Respond</td>
+    <td>Date</td>
+</tr>
+
+    {% for i in data %}
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i["date"] }}</td>
+        <td>{{ i["feedback"] }}</td>
+        <td>{{ i["respond"] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+{% endblock %}

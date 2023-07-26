@@ -1,0 +1,37 @@
+{% extends 'user/sub_temp.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/user_purchase_history_post">
+  <table class="table table-bordered">
+    <tr>
+      <td>from date</td>
+      <td><input type="date" name="d1" id="textfield" class="form-control"/></td>
+      <td>to date</td>
+      <td><input type="date" name="d2" id="textfield2" class="form-control"/></td>
+      <td><input type="submit" name="button" id="button" value="Show" class="btn btn-success"/></td>
+    </tr>
+  </table>
+    <p></p>
+    <table class="table table-hover">
+    <tr>
+      <td>Sno</td>
+      <td>Orderno</td>
+          <td>date</td>
+
+
+      <td>total</td>
+      <td>&nbsp;</td>
+    </tr>
+        {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['omid'] }}</td>
+           <td>{{ i['date'] }}&nbsp;</td>
+      <td>{{ i['totalamount'] }}&nbsp;</td>
+      <td><a href="/user_producr_history_order_sud/{{ i["omid"] }}" class="btn btn-info">more</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

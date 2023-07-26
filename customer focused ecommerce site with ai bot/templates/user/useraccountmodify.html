@@ -1,0 +1,67 @@
+{% extends 'user/sub_temp.html' %}
+{% block body %}
+
+<body>
+    <form id="form1" name="form1" method="post" action="/user_account_modify_post" enctype="multipart/form-data">
+      <table border="1">
+      <tr>
+          <td colspan="2"><img src="{{ data['image'] }}" alt="" width="150px" height="150px"/></td>
+      </tr>
+          <tr>
+              <td>Photo<input type="hidden" name="id" value="{{ data['userlogid'] }}"></td>
+              <td><input type="file" name="file"/></td>
+          </tr>
+        <tr>
+          <td width="54">name</td>
+          <td colspan="2"><input type="text" name="textfield" id="textfield" value="{{ data['username'] }}"></td>
+        </tr>
+
+        <tr>
+          <td>gender</td>
+          <td width="139">
+              <input type="radio" name="radio" id="radio" value="Male" value="Male" {% if data['gender']=='Male' %}checked{% endif %}>
+            Male<br>
+          <input type="radio" name="radio" id="radio2" value="Female" value="Female" {% if data['gender']=='Female' %}checked {% endif %}>
+            Female</td>
+
+        </tr>
+        <tr>
+          <td>email</td>
+          <td colspan="2"><input type="text" name="textfield2" id="textfield2" value="{{ data['email'] }} "></td>
+
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td colspan="2"><input type="text" name="textfield3" id="textfield3" value="{{ data['phone'] }} "></td>
+        </tr>
+          <tr>
+              <td>Place</td>
+              <td><input type="text" name="place" id="place" value="{{ data['place'] }} "></td>
+          </tr>
+          <tr>
+              <td>Post</td>
+              <td><input type="text" name="post" value="{{ data['post'] }} "></td>
+          </tr>
+          <tr>
+          <td>district</td>
+          <td colspan="2"><input type="text" name="textfield6" id="textfield6" value="{{ data['district'] }} "></td>
+        </tr>
+        <tr>
+          <td>pincode</td>
+          <td colspan="2"><input type="text" name="textfield4" id="textfield4" value="{{ data['pin'] }} "></td>
+
+        </tr>
+
+         <tr>
+          <td>state</td>
+          <td colspan="2"><input type="text" name="textfield5" id="textfield5" value="{{ data['state'] }} "></td>
+
+        </tr>
+          <tr>
+          <td colspan="2" align="center"><input type="submit" name="button" id="button" value="update" /></td>
+        </tr>
+      </table>
+    </form>
+
+</body>
+{% endblock %}
